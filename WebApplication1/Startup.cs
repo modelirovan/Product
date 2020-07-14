@@ -24,11 +24,11 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IAuthorizationService, AuthorizationService>();
-            services.AddScoped<IDescriptionValidator, DescriptionValidator>();
-            services.AddScoped<INameValidator, NameValidator>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IAuthorizationService, AuthorizationService>();
+            services.AddTransient<IDescriptionValidator, DescriptionValidator>();
+            services.AddTransient<INameValidator, NameValidator>();
 
             services.AddSwaggerGen(x => { x.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "My API", Version = "v1" }); });
 
